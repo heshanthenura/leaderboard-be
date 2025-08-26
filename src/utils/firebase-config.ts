@@ -2,6 +2,7 @@
 // dotenv.config()
 
 console.log(process.env.FIREBASE_SERVICE_ACCOUNT!);
+console.log(process.env.GIT_TOKEN!);
 
 
 import admin from "firebase-admin";
