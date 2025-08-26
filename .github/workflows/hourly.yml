@@ -2,8 +2,8 @@ name: Run TSProject Hourly
 
 on:
   schedule:
-    - cron: "0 * * * *" # Runs at minute 0 of every hour
-  workflow_dispatch: # Allows manual triggering too
+    - cron: "0 * * * *"
+  workflow_dispatch:
 
 jobs:
   build-and-run:
@@ -23,6 +23,14 @@ jobs:
 
       - name: Build TypeScript
         run: npm run build
+
+      - name: Print environment variables
+        run: |
+          echo "GIT_TOKEN=${GIT_TOKEN}"
+          echo "FIREBASE_SERVICE_ACCOUNT=${FIREBASE_SERVICE_ACCOUNT}"
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       - name: Run project
         run: npm start
