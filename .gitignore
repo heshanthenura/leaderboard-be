@@ -1,2 +1,3 @@
 .env
 leaderboard-bd9ac-firebase-adminsdk-fbsvc-f170d00f4a.json
+node_modules/*
