@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-dotenv.config()
+// import dotenv from "dotenv";
+// dotenv.config()
 
 import { GitHubAPI } from "./utils/github-api.js";
 import { AnalyseCommits } from "./utils/analyse-commits.js";
